@@ -70,7 +70,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
@@ -84,7 +84,9 @@ body:not(.en) .en{display:none!important}
 .notice .wrap{padding-top:8px;padding-bottom:8px;display:flex;gap:10px;align-items:baseline}
 .notice b{font-weight:700;color:var(--a2);white-space:nowrap}
 /* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--navy) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar{position:sticky;top:0;z-index:20}
+.notice .short{display:none}
+.nav{position:relative;background:color-mix(in srgb,var(--navy) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:56px}
 .nav .mark{color:#fff;text-decoration:none;font-family:var(--f-serif);font-weight:700;letter-spacing:.1em;white-space:nowrap}
 .nav nav{display:flex;gap:22px;flex:1;overflow-x:auto;scrollbar-width:none;font-size:14px}
@@ -243,6 +245,10 @@ footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:
   .head p{display:none}
 }
 @media (max-width:760px){
+  .notice .long{display:none}
+  .notice .short{display:inline}
+  .notice{font-size:12.5px}
+  html{scroll-padding-top:112px}
   .wrap{padding:0 20px}
   .nav nav{display:none}
   .nav .wrap{justify-content:space-between}
@@ -265,10 +271,12 @@ footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:
 </head>
 <body>
 
+<div class="topbar">
 <div class="notice" role="note">
   <div class="wrap">
     <b><span class="zh">使用說明</span><span class="en">Notice</span></b>
-    <span><span class="zh">本網站目前僅供國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」（Comparative Legislative Politics in East Asia）課程參考使用。</span><span class="en">This website is currently provided for reference only in the course Comparative Legislative Politics in East Asia (Fall 2026), Graduate Institute of National Development, National Taiwan University.</span></span>
+    <span class="long"><span class="zh">本網站目前僅供國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」（Comparative Legislative Politics in East Asia）課程參考使用。</span><span class="en">This website is currently provided for reference only in the course Comparative Legislative Politics in East Asia (Fall 2026), Graduate Institute of National Development, National Taiwan University.</span></span>
+    <span class="short"><span class="zh">僅供臺大國發所 115-1「東亞比較立法政治專題」課程參考使用</span><span class="en">For reference only: Comparative Legislative Politics in East Asia (Fall 2026), NTU</span></span>
   </div>
 </div>
 
@@ -289,6 +297,7 @@ footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:
     </div>
   </div>
 </header>
+</div>
 
 <main id="top">
   <section class="hero" aria-label="個人介紹">
