@@ -4,374 +4,611 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>陳佑丞 Yu-Cheng (Kane) Chen</title>
-<meta name="description" content="陳佑丞 Yu-Cheng (Kane) Chen｜國立臺灣大學國家發展研究所碩士生。研究行政法人與準政府組織、能源安全，以及環境治理與公民審議。">
+<meta name="description" content="陳佑丞 Yu-Cheng (Kane) Chen｜國立臺灣大學國家發展研究所碩士生。研究行政法人與準政府組織、能源安全，以及環境與科技治理。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: a fixed academic profile column (identity, advisors, contact) beside a single reading column of CV sections; dates sit in a mono gutter. */
+/* Layout idea: a navy hero carrying a live "institutional nodes" network, then CV sections where each research area owns a colour that follows it into the timeline and project list. */
 :root{
-  --bg:#fbfbfc;
-  --panel:#f1f3f6;
-  --ink:#1a1f29;
-  --muted:#5b6370;
-  --rule:#dfe3e8;
-  --accent:#1f3f73;
-  --f-display:"Source Serif 4","Noto Serif TC","Songti TC",Georgia,serif;
+  --bg:#f6f7f9;
+  --surface:#ffffff;
+  --ink:#152033;
+  --muted:#586274;
+  --rule:#e0e4ea;
+  --navy:#112645;
+  --accent:#2a5aa6;
+  --a1:#1a7a78;   /* 行政法人與準政府組織 */
+  --a2:#b8720f;   /* 能源安全 */
+  --a3:#3c8746;   /* 環境、科技治理與審議 */
+  --a4:#7346a6;   /* 氣候政治與比較立法 */
+  --a0:#8b95a5;   /* 調查研究 */
+  --f-serif:"Noto Serif TC","Songti TC",serif;
+  --f-latin:"Source Serif 4",Georgia,serif;
   --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#12161c;--panel:#181d25;--ink:#e3e6ea;--muted:#9aa2ae;--rule:#2a313b;--accent:#9db4e4;
+    --bg:#0e131a;--surface:#151b24;--ink:#e3e7ed;--muted:#9ba5b3;--rule:#26303c;--navy:#0a1830;--accent:#8fb0ec;
+    --a1:#52b6b2;--a2:#e3a24b;--a3:#73c07c;--a4:#b391e2;--a0:#8994a5;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#12161c;--panel:#181d25;--ink:#e3e6ea;--muted:#9aa2ae;--rule:#2a313b;--accent:#9db4e4;
+  --bg:#0e131a;--surface:#151b24;--ink:#e3e7ed;--muted:#9ba5b3;--rule:#26303c;--navy:#0a1830;--accent:#8fb0ec;
+  --a1:#52b6b2;--a2:#e3a24b;--a3:#73c07c;--a4:#b391e2;--a0:#8994a5;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
 body.en .zh{display:none!important}
 body:not(.en) .en{display:none!important}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
 
-.page{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:72px}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--navy) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:56px}
+.nav .mark{color:#fff;text-decoration:none;font-family:var(--f-serif);font-weight:700;letter-spacing:.1em;white-space:nowrap}
+.nav nav{display:flex;gap:22px;flex:1;overflow-x:auto;scrollbar-width:none;font-size:14px}
+.nav nav::-webkit-scrollbar{display:none}
+.nav nav a{color:rgba(255,255,255,.68);text-decoration:none;white-space:nowrap}
+.nav nav a:hover{color:#fff}
+.lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:4px;overflow:hidden;flex:none}
+.lang button{font:500 12.5px/1 var(--f-body);padding:7px 11px;border:0;background:transparent;color:rgba(255,255,255,.7);cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}
 
-/* profile column */
-.profile{position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;scrollbar-width:none;padding:56px 0 40px;display:flex;flex-direction:column;gap:28px}
-.profile > *{flex-shrink:0}
-.lang{display:inline-flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;align-self:flex-start}
-.lang button{font:500 12.5px/1 var(--f-body);padding:6px 10px;border:0;background:transparent;color:var(--muted);cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.id h1{margin:0;font-family:"Noto Serif TC",var(--f-display);font-weight:700;font-size:2.4rem;line-height:1.2;letter-spacing:.08em}
-.id .roman{margin:6px 0 0;font-family:var(--f-display);font-weight:500;font-size:1.15rem;letter-spacing:.01em}
-.id .pos{margin:14px 0 0;font-size:14.5px;color:var(--muted);line-height:1.65}
-.id .pos b{color:var(--ink);font-weight:500}
-.block h2{margin:0 0 8px;font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.block ul{list-style:none;margin:0;padding:0;font-size:14px;display:flex;flex-direction:column;gap:8px}
-.block li small{display:block;color:var(--muted);font-size:12.5px;line-height:1.55}
-.links a{word-break:break-all}
-.toc{border-top:1px solid var(--rule);padding-top:20px}
-.toc a{color:var(--muted);text-decoration:none}
-.toc a:hover{color:var(--accent)}
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,color-mix(in srgb,var(--navy) 88%,transparent) 42%,transparent 78%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-top:76px;padding-bottom:64px}
+.hero .eyebrow{margin:0 0 18px;font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.hero h1{margin:0;font-family:var(--f-serif);font-weight:900;font-size:clamp(3rem,7vw,5.2rem);line-height:1.05;letter-spacing:.08em}
+.hero .roman{margin:10px 0 0;font-family:var(--f-latin);font-size:clamp(1.25rem,2.4vw,1.7rem);font-weight:400;color:rgba(255,255,255,.88)}
+.hero .roman em{font-style:italic;color:#fff}
+.hero .lede{margin:26px 0 0;max-width:34em;font-size:clamp(1.02rem,1.6vw,1.15rem);line-height:1.8;color:rgba(255,255,255,.86);text-wrap:pretty}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.28);color:#fff;transition:background .15s,border-color .15s}
+.btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.btn.primary{background:#fff;color:var(--navy);border-color:#fff}
+.btn.primary:hover{background:#e7ecf5}
+.btn svg{width:15px;height:15px;flex:none}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:40px 0 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.14);list-style:none;font-size:13px;color:rgba(255,255,255,.75);max-width:640px}
+.legend li{display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+.d1{background:var(--a1)}.d2{background:var(--a2)}.d3{background:var(--a3)}.d4{background:var(--a4)}.d0{background:var(--a0)}
+.hero .d1{background:#52b6b2}.hero .d2{background:#e3a24b}.hero .d3{background:#73c07c}.hero .d4{background:#b391e2}
 
-/* main column */
-main{padding:56px 0 24px;min-width:0}
-section{padding:0 0 44px;margin:0 0 44px;border-bottom:1px solid var(--rule)}
-section:last-of-type{border-bottom:0}
-h2.sec{margin:0 0 20px;font-family:"Noto Serif TC",var(--f-display);font-weight:600;font-size:1.4rem;letter-spacing:.04em;text-wrap:balance}
-body.en h2.sec{font-family:var(--f-display);letter-spacing:0}
-.about p{margin:0 0 14px;max-width:66ch;font-size:16.5px}
-.about p:last-child{margin:0}
+/* ---------- facts strip ---------- */
+.facts{background:var(--surface);border-bottom:1px solid var(--rule)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:22px 20px 20px 0;display:flex;flex-direction:column;gap:2px}
+.fact + .fact{padding-left:24px;border-left:1px solid var(--rule)}
+.fact strong{font-family:var(--f-latin);font-size:2rem;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{font-size:13.5px;color:var(--muted)}
 
-.areas{display:grid;grid-template-columns:1fr 1fr;gap:20px 36px}
-.areas h3{margin:0 0 4px;font-size:1rem;font-weight:700}
-.areas p{margin:0;font-size:14.5px;color:var(--muted)}
+/* ---------- sections ---------- */
+section.block{padding:72px 0;border-bottom:1px solid var(--rule)}
+section.block.alt{background:var(--surface)}
+.head{display:flex;align-items:baseline;gap:14px;margin:0 0 30px}
+.head .no{font-family:var(--f-mono);font-size:12.5px;color:var(--accent);letter-spacing:.06em}
+.head h2{margin:0;font-family:var(--f-serif);font-weight:700;font-size:clamp(1.5rem,2.6vw,1.9rem);letter-spacing:.04em;text-wrap:balance}
+body.en .head h2{font-family:var(--f-latin);font-weight:600;letter-spacing:0}
+.head p{margin:0 0 0 auto;color:var(--muted);font-size:14.5px;max-width:42ch;text-align:right}
 
-.methods{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
-.methods li{font-size:13.5px;padding:3px 10px;background:var(--panel);border-radius:2px}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:56px;align-items:start}
+.about .text p{margin:0 0 16px;font-size:16.5px;max-width:62ch}
+.about .text p:first-child{font-family:var(--f-serif);font-size:1.2rem;line-height:1.75;font-weight:500}
+body.en .about .text p:first-child{font-family:var(--f-latin);font-size:1.25rem;font-weight:400}
+.card{background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:22px 24px}
+section.block:not(.alt) .card{background:var(--surface)}
+.card h3{margin:0 0 14px;font-family:var(--f-mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.person{padding:0 0 14px;margin:0 0 14px;border-bottom:1px solid var(--rule)}
+.person:last-child{border:0;margin:0;padding:0}
+.person b{display:block;font-size:16px}
+.person .role{display:inline-block;font-size:11.5px;color:var(--accent);border:1px solid currentColor;border-radius:3px;padding:0 6px;margin-left:6px;vertical-align:2px;font-weight:500}
+.person small{display:block;color:var(--muted);font-size:13px;line-height:1.6;margin-top:3px}
 
-.sub{margin:28px 0 4px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.sub:first-of-type{margin-top:0}
+/* areas */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.area{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.area::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--c)}
+.area .k{font-family:var(--f-mono);font-size:12px;color:var(--c);font-weight:500;letter-spacing:.08em}
+.area h3{margin:0;font-family:var(--f-serif);font-size:1.12rem;line-height:1.5;font-weight:700;text-wrap:balance}
+body.en .area h3{font-family:var(--f-latin);font-weight:600}
+.area p{margin:0;font-size:14px;color:var(--muted);line-height:1.7}
+.area .n{margin-top:auto;padding-top:10px;border-top:1px dashed var(--rule);font-size:13px;color:var(--muted)}
+.area .n b{color:var(--c);font-family:var(--f-latin);font-size:1.15rem}
+.methods{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.methods .lbl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.chip{font-size:13.5px;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--rule)}
+
+/* timeline */
+.tl-box{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);padding:22px 22px 14px}
+.tl{min-width:760px;position:relative}
+.tl-axis,.tl-row{display:grid;grid-template-columns:230px 1fr;align-items:center}
+.tl-axis .scale{position:relative;height:22px;font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.tl-axis .scale span{position:absolute;top:0;transform:translateX(-50%)}
+.tl-rows{position:relative}
+.tl-grid{position:absolute;top:0;bottom:0;left:230px;right:0;pointer-events:none}
+.tl-grid i{position:absolute;top:0;bottom:0;width:1px;background:var(--rule)}
+.tl-grid i.now{background:var(--accent);width:2px}
+.tl-grid b{position:absolute;top:-2px;transform:translateX(-50%);font:500 10.5px var(--f-mono);color:var(--accent);background:var(--surface);padding:0 4px;letter-spacing:.06em}
+.tl-row{min-height:34px}
+.tl-row .lb{font-size:13px;line-height:1.35;padding-right:14px;display:flex;gap:8px;align-items:center}
+.tl-row .lb .dot{margin-top:1px}
+.tl-track{position:relative;height:34px}
+.tl-bar{position:absolute;top:10px;height:14px;border-radius:3px;background:var(--c);min-width:6px}
+.tl-bar.open::after{content:"";position:absolute;right:-6px;top:0;bottom:0;width:10px;background:linear-gradient(90deg,var(--c),transparent);border-radius:0 3px 3px 0}
+.tl-bar.plan{background:transparent;border:1.5px dashed var(--c)}
+.tl-note{margin:12px 0 0;font-size:12.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+.tl-note span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:22px;height:9px;border-radius:2px;background:var(--a0)}
+.sw.plan{background:transparent;border:1.5px dashed var(--a0)}
+
+/* entries */
+.group{margin:0 0 40px}
+.group:last-child{margin:0}
+.ghead{display:flex;align-items:center;gap:12px;margin:0 0 6px;font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ghead::after{content:"";flex:1;height:1px;background:var(--rule)}
 .entries{list-style:none;margin:0;padding:0}
-.entries > li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--rule)}
-.entries > li:first-child{border-top:0}
+.entries > li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.entries > li:last-child{border-bottom:0}
 .when{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px;white-space:nowrap}
-.what h3{margin:0;font-size:15.5px;font-weight:700;line-height:1.6;text-wrap:pretty}
-.what .meta{margin:3px 0 0;font-size:14px;color:var(--muted)}
-.what .meta .funder{color:var(--accent);font-weight:500}
-.what .note{margin:6px 0 0;font-size:14.5px;max-width:64ch}
-.what ul{margin:6px 0 0;padding-left:1.1em;font-size:14.5px}
+.when .live{display:inline-flex;align-items:center;gap:5px;color:var(--accent)}
+.when .live::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.what{position:relative;padding-left:18px}
+.what::before{content:"";position:absolute;left:0;top:7px;bottom:4px;width:3px;border-radius:2px;background:var(--c,var(--rule))}
+.what h3{margin:0;font-size:16px;font-weight:700;line-height:1.6;text-wrap:pretty}
+.what .meta{margin:4px 0 0;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.tag{font-size:12px;font-weight:500;padding:1px 8px;border-radius:3px;background:color-mix(in srgb,var(--c,var(--accent)) 12%,transparent);color:var(--c,var(--accent))}
+.what .note{margin:8px 0 0;font-size:14.5px;max-width:66ch}
+.what ul{margin:8px 0 0;padding-left:1.1em;font-size:14.5px}
 .what ul li{margin:3px 0}
-.status{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;padding:0 6px;border:1px solid var(--accent);color:var(--accent);border-radius:2px;margin-left:6px;vertical-align:2px}
 
+.feature{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--a4);border-radius:6px;padding:24px 28px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
+.feature .st{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--a4);margin:0 0 8px}
+.feature h3{margin:0;font-family:var(--f-serif);font-size:1.3rem;line-height:1.55;font-weight:700;text-wrap:balance}
+body.en .feature h3{font-family:var(--f-latin);font-weight:600}
+.feature p{margin:10px 0 0;color:var(--muted);font-size:14.5px;max-width:62ch}
+.feature .venue{text-align:right;font-size:13px;color:var(--muted);line-height:1.5;white-space:nowrap}
+.feature .venue b{display:block;font-family:var(--f-latin);font-size:1.6rem;color:var(--ink);font-weight:600}
+
+/* education timeline */
+.edu{list-style:none;margin:0;padding:0;position:relative}
+.edu::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--rule)}
+.edu li{position:relative;padding:0 0 22px 32px}
+.edu li:last-child{padding-bottom:0}
+.edu li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--muted)}
+.edu li.cur::before{border-color:var(--accent);background:var(--accent)}
+.edu .when{display:block;padding:0}
+.edu h3{margin:2px 0 0;font-size:16px;font-weight:700;line-height:1.55}
+.edu p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .compact{list-style:none;margin:0;padding:0;font-size:14.5px}
-.compact li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:7px 0}
-.compact li span.what-c small{color:var(--muted)}
+.compact li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.compact li:last-child{border:0}
 
-footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:24px 0 48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+/* footer */
+footer{background:var(--navy);color:rgba(255,255,255,.75);padding:48px 0 40px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end}
+footer .big{font-family:var(--f-serif);font-size:1.6rem;color:#fff;font-weight:700;letter-spacing:.06em;margin:0 0 6px}
+footer a{color:#fff}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:12.5px}
 
-@media (max-width:900px){
-  .page{grid-template-columns:1fr;gap:0;padding:0 20px}
-  .profile{position:static;padding:32px 0 28px;border-bottom:1px solid var(--rule);gap:22px}
-  .toc{display:none}
-  main{padding-top:36px}
-  .areas{grid-template-columns:1fr}
+@media (max-width:980px){
+  .areas{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr;gap:32px}
+  .head p{display:none}
 }
-@media (max-width:560px){
-  .entries > li,.compact li{grid-template-columns:1fr;gap:2px}
-  .page{padding:0 16px}
+@media (max-width:760px){
+  .wrap{padding:0 20px}
+  .nav nav{display:none}
+  .nav .wrap{justify-content:space-between}
+  .hero::after{background:linear-gradient(180deg,color-mix(in srgb,var(--navy) 70%,transparent),var(--navy) 85%)}
+  .hero .wrap{padding-top:48px;padding-bottom:44px}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact{padding:16px 12px 16px 0}
+  .fact + .fact{padding-left:16px}
+  .fact:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+  .fact:nth-child(4){border-top:1px solid var(--rule)}
+  .areas,.two{grid-template-columns:1fr}
+  .two{gap:40px}
+  .entries > li{grid-template-columns:1fr;gap:6px}
+  .feature{grid-template-columns:1fr}
+  .feature .venue{text-align:left}
+  section.block{padding:52px 0}
 }
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <aside class="profile">
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">陳佑丞</a>
+    <nav aria-label="章節">
+      <a href="#about"><span class="zh">簡介</span><span class="en">About</span></a>
+      <a href="#research"><span class="zh">研究領域</span><span class="en">Research</span></a>
+      <a href="#timeline"><span class="zh">研究歷程</span><span class="en">Timeline</span></a>
+      <a href="#projects"><span class="zh">研究計畫</span><span class="en">Projects</span></a>
+      <a href="#education"><span class="zh">學經歷</span><span class="en">Education &amp; Experience</span></a>
+      <a href="#cv">CV</a>
+    </nav>
     <div class="lang" role="group" aria-label="語言 Language">
       <button type="button" id="btn-zh" aria-pressed="true">中文</button>
-      <button type="button" id="btn-en" aria-pressed="false">English</button>
+      <button type="button" id="btn-en" aria-pressed="false">EN</button>
     </div>
+  </div>
+</header>
 
-    <div class="id">
+<main id="top">
+  <section class="hero" aria-label="個人介紹">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="eyebrow"><span class="zh">國立臺灣大學　國家發展研究所</span><span class="en">Graduate Institute of National Development · National Taiwan University</span></p>
       <h1>陳佑丞</h1>
-      <p class="roman">Yu-Cheng (Kane) Chen</p>
-      <p class="pos">
-        <span class="zh"><b>國立臺灣大學 國家發展研究所</b><br>碩士生<br>臺灣大學、臺北市立大學 兼任研究助理</span>
-        <span class="en"><b>M.A. Student</b><br>Graduate Institute of National Development, National Taiwan University<br>Graduate Research Assistant, NTU and University of Taipei</span>
+      <p class="roman">Yu-Cheng <em>(Kane)</em> Chen</p>
+      <p class="lede">
+        <span class="zh">國家如何透過行政法人、政府捐助財團法人等準政府組織進行治理？這些制度如何變遷、為何引發爭議？我的研究從這裡出發，並延伸到能源安全與氣候治理。</span>
+        <span class="en">How does the state govern through administrative corporations, government-endowed foundations and other quasi-governmental bodies, and why do some of them become contested? My research starts there and extends to energy security and climate governance.</span>
       </p>
-    </div>
-
-    <div class="block">
-      <h2><span class="zh">指導教授</span><span class="en">Advisors</span></h2>
-      <ul>
-        <li><span class="zh">林子倫 教授</span><span class="en">Prof. Tze-Luen Lin</span>
-          <small><span class="zh">臺大政治學系、公共事務研究所暨國際政治經濟學院；公共政策與法律研究中心主任</span><span class="en">Dept. of Political Science, Graduate Institute of Public Affairs &amp; College of International Political Economy, NTU; Director, Center for Public Policy and Law</span></small></li>
-        <li><span class="zh">張國暉 教授（共同指導）</span><span class="en">Prof. Kuo-Hui Chang (co-advisor)</span>
-          <small><span class="zh">臺大國家發展研究所所長</span><span class="en">Director, Graduate Institute of National Development, NTU</span></small></li>
+      <div class="cta">
+        <a class="btn primary" href="#cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span class="zh">下載 CV</span><span class="en">Download CV</span></a>
+        <a class="btn" href="mailto:r14341044@ntu.edu.tw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>r14341044@ntu.edu.tw</a>
+        <a class="btn" href="https://www.linkedin.com/in/%E4%BD%91%E4%B8%9E-%E9%99%B3-949731250" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/kane-yc-chen" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+      </div>
+      <ul class="legend" aria-label="研究領域">
+        <li><span class="dot d1"></span><span class="zh">行政法人與準政府組織</span><span class="en">Quasi-governmental organizations</span></li>
+        <li><span class="dot d2"></span><span class="zh">能源安全</span><span class="en">Energy security</span></li>
+        <li><span class="dot d3"></span><span class="zh">環境、科技治理與審議</span><span class="en">Environmental &amp; technology governance</span></li>
+        <li><span class="dot d4"></span><span class="zh">氣候政治與比較立法</span><span class="en">Climate politics</span></li>
       </ul>
     </div>
+  </section>
 
-    <div class="block links">
-      <h2><span class="zh">聯絡</span><span class="en">Contact</span></h2>
-      <ul>
-        <li><a href="mailto:r14341044@ntu.edu.tw">r14341044@ntu.edu.tw</a></li>
-        <li><a href="https://www.linkedin.com/in/%E4%BD%91%E4%B8%9E-%E9%99%B3-949731250" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/kane-yc-chen" rel="noopener">GitHub</a></li>
-      </ul>
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><strong>5</strong><span class="zh">進行中的研究計畫</span><span class="en">ongoing research projects</span></div>
+      <div class="fact"><strong>2</strong><span class="zh">國科會計畫</span><span class="en">NSTC-funded projects</span></div>
+      <div class="fact"><strong>3</strong><span class="zh">合作的研究團隊</span><span class="en">research teams</span></div>
+      <div class="fact"><strong>2021–</strong><span class="zh">投入調查與政策研究</span><span class="en">in survey and policy research</span></div>
     </div>
+  </div>
 
-    <nav class="block toc" aria-label="章節">
-      <h2><span class="zh">目次</span><span class="en">Contents</span></h2>
-      <ul>
-        <li><a href="#about"><span class="zh">簡介</span><span class="en">About</span></a></li>
-        <li><a href="#research"><span class="zh">研究領域與方法</span><span class="en">Research Areas &amp; Methods</span></a></li>
-        <li><a href="#wip"><span class="zh">撰寫中論文</span><span class="en">Work in Progress</span></a></li>
-        <li><a href="#projects"><span class="zh">研究計畫</span><span class="en">Research Projects</span></a></li>
-        <li><a href="#education"><span class="zh">學歷</span><span class="en">Education</span></a></li>
-        <li><a href="#experience"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
-        <li><a href="#service"><span class="zh">公共服務</span><span class="en">Service</span></a></li>
-      </ul>
-    </nav>
-  </aside>
+  <!-- About -->
+  <section class="block alt" id="about">
+    <div class="wrap">
+      <div class="head"><span class="no">01</span><h2><span class="zh">簡介</span><span class="en">About</span></h2></div>
+      <div class="about">
+        <div class="text">
+          <p><span class="zh">我是國立臺灣大學國家發展研究所碩士生。我的研究關心國家如何透過與行政機關保持距離的組織進行治理：政府為何設立行政法人與政府捐助之財團法人，這些組織如何變遷，又為何有些會引發爭議。</span><span class="en">I am a master’s student in National Development at National Taiwan University. My research asks how the state governs through organizations at arm’s length: why governments create administrative corporations and government-endowed foundations, how these bodies change, and why some become contested.</span></p>
+          <p><span class="zh">目前參與的計畫從理論與實務兩端回應這個問題：國科會計畫比較準政府組織的制度變遷；職災預防及重建中心轉型評估與國家中醫研究院人事薪資制度建構兩項委託研究，則讓我看見這些制度在實務上如何被設計。此外，我也研究能源安全，以及日本與韓國國會如何討論氣候「損失與損害」。</span><span class="en">My current projects approach this from theory and practice. An NSTC project compares institutional change across quasi-governmental organizations, while two commissioned studies show how such bodies are designed: a feasibility assessment for an occupational accident center, and the personnel and pay systems of the National Institute of Traditional Chinese Medicine. I also work on energy security and on how the Japanese and Korean legislatures discuss climate loss and damage.</span></p>
+          <p><span class="zh">我的學術訓練來自公共事務。民意調查中心的工作、市政府與環境法律團體的實習，以及校務會議學生代表的經驗，讓我理解政策在實務上如何被制定，也如何被衡量。</span><span class="en">My training is in public administration. Survey work at a public opinion research center, internships in city government and at an environmental law NGO, and two years on university councils taught me how policy is made, and measured, in practice.</span></p>
+        </div>
+        <aside class="card">
+          <h3><span class="zh">指導教授與研究團隊</span><span class="en">Advisors &amp; Supervisors</span></h3>
+          <div class="person"><b><span class="zh">林子倫 教授</span><span class="en">Prof. Tze-Luen Lin</span><span class="role"><span class="zh">指導教授</span><span class="en">Advisor</span></span></b>
+            <small><span class="zh">臺大政治學系、公共事務研究所暨國際政治經濟學院專任教授，兼公共政策與法律研究中心主任</span><span class="en">Professor, Dept. of Political Science, Graduate Institute of Public Affairs &amp; College of International Political Economy, NTU; Director, Center for Public Policy and Law</span></small></div>
+          <div class="person"><b><span class="zh">張國暉 教授</span><span class="en">Prof. Kuo-Hui Chang</span><span class="role"><span class="zh">共同指導</span><span class="en">Co-advisor</span></span></b>
+            <small><span class="zh">臺大國家發展研究所專任教授兼所長</span><span class="en">Professor and Director, Graduate Institute of National Development, NTU</span></small></div>
+          <div class="person"><b><span class="zh">李天申 副教授</span><span class="en">Assoc. Prof. Tien-Shen Li</span><span class="role"><span class="zh">研究助理</span><span class="en">RA supervisor</span></span></b>
+            <small><span class="zh">臺北市立大學公共事務學系專任副教授兼通識教育中心主任</span><span class="en">Associate Professor, Dept. of Public Affairs; Director, General Education Center, University of Taipei</span></small></div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-  <main>
-    <section id="about" class="about">
-      <h2 class="sec"><span class="zh">簡介</span><span class="en">About</span></h2>
-      <p><span class="zh">我是國立臺灣大學國家發展研究所碩士生，研究興趣在公共行政與治理。碩士階段聚焦於兩個問題：國家如何透過行政法人、政府捐助財團法人等準政府組織提供公共服務，這些制度又如何變遷與引發爭議；以及能源與環境議題中，制度與公民參與如何影響治理能力。</span><span class="en">I am an M.A. student at the Graduate Institute of National Development, National Taiwan University, working on public administration and governance. My research asks two questions: how the state delivers public services through quasi-governmental bodies such as administrative corporations and government-endowed foundations, and how those institutions change and become contested; and how institutions and citizen participation shape governance capacity in energy and environmental policy.</span></p>
-      <p><span class="zh">目前於臺灣大學與臺北市立大學擔任兼任研究助理，參與國科會、醫學倫理與政府委託研究計畫。</span><span class="en">I currently work as a graduate research assistant at National Taiwan University and the University of Taipei on projects funded by the National Science and Technology Council (NSTC), a hospital–university collaboration, and government commissions.</span></p>
-    </section>
-
-    <section id="research">
-      <h2 class="sec"><span class="zh">研究領域與方法</span><span class="en">Research Areas &amp; Methods</span></h2>
+  <!-- Research areas -->
+  <section class="block" id="research">
+    <div class="wrap">
+      <div class="head"><span class="no">02</span><h2><span class="zh">研究領域與方法</span><span class="en">Research Areas &amp; Methods</span></h2><p><span class="zh">四個領域各以一種顏色標示，對應下方的時間軸與計畫。</span><span class="en">Each area has a colour, used again in the timeline and project list.</span></p></div>
       <div class="areas">
-        <div>
-          <h3><span class="zh">行政法人與準政府組織</span><span class="en">Administrative corporations &amp; quasi-governmental organizations</span></h3>
-          <p><span class="zh">制度變遷、爭議生成、組織轉型可行性，以及人事與薪資制度設計。</span><span class="en">Institutional change, how controversies arise, feasibility of organizational transformation, and personnel and pay system design.</span></p>
-        </div>
-        <div>
+        <article class="area" style="--c:var(--a1)">
+          <span class="k">A</span>
+          <h3><span class="zh">行政法人與準政府組織</span><span class="en">Administrative corporations &amp; quasi-governmental bodies</span></h3>
+          <p><span class="zh">制度變遷、爭議生成、組織轉型可行性，以及人事與薪資制度設計。</span><span class="en">Institutional change, controversy, the feasibility of organizational transformation, and personnel and pay design.</span></p>
+          <span class="n"><b>4</b> <span class="zh">項計畫</span><span class="en">projects</span></span>
+        </article>
+        <article class="area" style="--c:var(--a2)">
+          <span class="k">B</span>
           <h3><span class="zh">能源安全與地緣政治</span><span class="en">Energy security &amp; geopolitics</span></h3>
-          <p><span class="zh">關鍵能資源風險、區域合作策略與城市能源韌性。</span><span class="en">Risks to key energy resources, regional cooperation strategies, and urban energy resilience.</span></p>
-        </div>
-        <div>
-          <h3><span class="zh">環境治理與公民審議</span><span class="en">Environmental governance &amp; public deliberation</span></h3>
-          <p><span class="zh">環境與科技議題中的公民參與、審議機制與科技治理。</span><span class="en">Citizen participation, deliberative institutions, and technology governance in environmental issues.</span></p>
-        </div>
-        <div>
+          <p><span class="zh">關鍵能資源風險、區域合作策略，以及以桌上推演檢驗城市能源韌性。</span><span class="en">Key energy resource risks, regional cooperation, and tabletop exercises on urban energy resilience.</span></p>
+          <span class="n"><b>1</b> <span class="zh">項國科會計畫</span><span class="en">NSTC project</span></span>
+        </article>
+        <article class="area" style="--c:var(--a3)">
+          <span class="k">C</span>
+          <h3><span class="zh">環境、科技治理與公民審議</span><span class="en">Environmental &amp; technology governance, deliberation</span></h3>
+          <p><span class="zh">公民參與、審議機制，以及新興科技（如基因檢測）帶來的治理與倫理問題。</span><span class="en">Citizen participation, deliberative institutions, and the governance and ethics of new technologies such as genetic testing.</span></p>
+          <span class="n"><b>2</b> <span class="zh">項計畫</span><span class="en">projects</span></span>
+        </article>
+        <article class="area" style="--c:var(--a4)">
+          <span class="k">D</span>
           <h3><span class="zh">氣候政治與比較立法</span><span class="en">Climate politics &amp; comparative legislatures</span></h3>
           <p><span class="zh">東亞國會如何討論氣候損失與損害（L&amp;D）及氣候融資。</span><span class="en">How East Asian legislatures debate climate loss and damage (L&amp;D) and climate finance.</span></p>
+          <span class="n"><b>1</b> <span class="zh">篇撰寫中論文</span><span class="en">paper in progress</span></span>
+        </article>
+      </div>
+      <div class="methods">
+        <span class="lbl"><span class="zh">研究方法</span><span class="en">Methods</span></span>
+        <span class="chip"><span class="zh">比較制度分析</span><span class="en">Comparative institutional analysis</span></span>
+        <span class="chip"><span class="zh">跨國個案研究</span><span class="en">Cross-national case studies</span></span>
+        <span class="chip"><span class="zh">調查研究</span><span class="en">Survey research</span></span>
+        <span class="chip"><span class="zh">計量文本分析</span><span class="en">Quantitative text analysis</span></span>
+        <span class="chip"><span class="zh">焦點團體座談</span><span class="en">Focus groups</span></span>
+        <span class="chip"><span class="zh">桌上推演（TTX）設計</span><span class="en">Tabletop exercise design</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="block alt" id="timeline">
+    <div class="wrap">
+      <div class="head"><span class="no">03</span><h2><span class="zh">研究歷程</span><span class="en">Research Timeline</span></h2><p><span class="zh">2021 年至今參與的研究，依領域著色。</span><span class="en">Research work since 2021, coloured by area.</span></p></div>
+      <div class="tl-box">
+        <div class="tl" id="tl"></div>
+        <p class="tl-note">
+          <span><i class="sw"></i><span class="zh">已完成或進行中</span><span class="en">Completed or ongoing</span></span>
+          <span><i class="sw plan"></i><span class="zh">撰寫中、預計投稿</span><span class="en">In progress, planned submission</span></span>
+          <span><span class="dot d0"></span><span class="zh">調查研究</span><span class="en">Survey research</span></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work in progress + projects -->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="head"><span class="no">04</span><h2><span class="zh">論文與研究計畫</span><span class="en">Papers &amp; Research Projects</span></h2></div>
+
+      <div class="group">
+        <p class="ghead"><span class="zh">撰寫中論文</span><span class="en">Work in progress</span></p>
+        <div class="feature">
+          <div>
+            <p class="st"><span class="zh">研討會論文・撰寫中</span><span class="en">Conference paper · in progress</span></p>
+            <h3><span class="zh">誰在國會談「損失與損害」？日本與韓國國會的氣候損失與損害討論</span><span class="en">Who Talks about “Loss and Damage” in Parliament? Climate Loss and Damage in the Japanese and Korean Legislatures</span></h3>
+            <p><span class="zh">以計量文本分析比較日、韓國會質詢中對氣候損失與損害及氣候融資的討論。</span><span class="en">Compares how Japanese and Korean legislators discuss climate loss and damage and climate finance, using quantitative text analysis of parliamentary questions.</span></p>
+          </div>
+          <div class="venue"><b>TASPAA 2027</b><span class="zh">預計投稿第 22 屆年會</span><span class="en">Planned submission, 22nd conference</span></div>
         </div>
       </div>
-      <ul class="methods" aria-label="研究方法">
-        <li><span class="zh">比較制度分析</span><span class="en">Comparative institutional analysis</span></li>
-        <li><span class="zh">跨國個案研究</span><span class="en">Cross-national case studies</span></li>
-        <li><span class="zh">調查研究</span><span class="en">Survey research</span></li>
-        <li><span class="zh">計量文本分析</span><span class="en">Quantitative text analysis</span></li>
-        <li><span class="zh">焦點團體座談</span><span class="en">Focus groups</span></li>
-        <li><span class="zh">桌上推演（TTX）設計</span><span class="en">Tabletop exercise (TTX) design</span></li>
-      </ul>
-    </section>
 
-    <section id="wip">
-      <h2 class="sec"><span class="zh">撰寫中論文</span><span class="en">Work in Progress</span></h2>
-      <ul class="entries">
-        <li>
-          <div class="when">2026 —</div>
-          <div class="what">
-            <h3><span class="zh">誰在國會談「損失與損害」？日本與韓國國會的氣候損失與損害討論</span><span class="en">Who Talks about "Loss and Damage" in Parliament? Climate Loss and Damage in the Japanese and Korean Legislatures</span></h3>
-            <p class="meta"><span class="zh">預計投稿：2027 年第 22 屆 TASPAA 年會「重塑公共治理：信任、夥伴與公共價值」</span><span class="en">Planned submission: 22nd TASPAA Annual Conference, 2027</span></p>
-            <p class="note"><span class="zh">以計量文本分析比較日、韓國會質詢中對氣候損失與損害及氣候融資的討論。</span><span class="en">Compares how Japanese and Korean legislators discuss climate loss and damage and climate finance, using quantitative text analysis of parliamentary questions.</span></p>
-          </div>
-        </li>
-      </ul>
-    </section>
+      <div class="group">
+        <p class="ghead"><span class="zh">進行中的研究計畫</span><span class="en">Ongoing projects</span></p>
+        <ul class="entries">
+          <li>
+            <div class="when"><span class="live">2026.10 —</span></div>
+            <div class="what" style="--c:var(--a1)">
+              <h3><span class="zh">制度節點與爭議的生成邏輯：準政府組織制度變遷過程的比較分析－以行政法人與政府捐助之財團法人為例</span><span class="en">Institutional Nodes and the Logic of Controversy Generation: A Comparative Analysis of Institutional Change in Quasi-Governmental Organizations, Focusing on Administrative Corporations and Government-Endowed Foundations</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">國科會</span><span class="en">NSTC</span></span><span class="zh">臺北市立大學・李天申 副教授</span><span class="en">University of Taipei · Assoc. Prof. Tien-Shen Li</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when"><span class="live">2026.10 —</span></div>
+            <div class="what" style="--c:var(--a1)">
+              <h3><span class="zh">行政法人國家中醫研究院人事及薪資建構委託辦理計畫</span><span class="en">Establishment of Personnel and Compensation Systems for the National Institute of Traditional Chinese Medicine</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">委託研究</span><span class="en">Commissioned</span></span><span class="zh">臺北市立大學・李天申 副教授</span><span class="en">University of Taipei · Assoc. Prof. Tien-Shen Li</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when"><span class="live">2026 —</span></div>
+            <div class="what" style="--c:var(--a1)">
+              <h3><span class="zh">115 年度職災勞工傷病診治及重建復工服務精進計畫－職災預防及重建中心轉型為行政法人之可行性評估</span><span class="en">Feasibility Assessment of Transforming the Center for Occupational Accident Prevention and Rehabilitation into an Administrative Corporation</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">委託研究</span><span class="en">Commissioned</span></span><span class="zh">台灣職業衛生學會</span><span class="en">Taiwan Occupational Hygiene Association</span></p>
+              <p class="note"><span class="zh">撰寫國外組織個案（日本、韓國）章節，並製作焦點團體座談簡報。</span><span class="en">Wrote the chapter on comparator organizations in Japan and South Korea and prepared the focus-group presentation.</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when"><span class="live">2026.02 —</span></div>
+            <div class="what" style="--c:var(--a3)">
+              <h3><span class="zh">探索次世代定序時代產前和新生兒基因檢測的父母決策和倫理問題</span><span class="en">Exploring Parental Decision-Making and Ethical Issues in Prenatal and Neonatal Genetic Testing in the Next-Generation Sequencing Era</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">合作研究</span><span class="en">Joint study</span></span><span class="zh">臺大醫院、國立臺灣大學・林子倫 教授</span><span class="en">NTU Hospital &amp; NTU · Prof. Tze-Luen Lin</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when"><span class="live">2026.01 —</span></div>
+            <div class="what" style="--c:var(--a2)">
+              <h3><span class="zh">地緣政治下的能源安全、關鍵能資源風險及區域合作策略之研析</span><span class="en">Energy Security, Key Energy Resource Risks, and Regional Cooperation Strategies under Geopolitics</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">國科會</span><span class="en">NSTC</span></span><span class="zh">國立臺灣大學・林子倫 教授</span><span class="en">National Taiwan University · Prof. Tze-Luen Lin</span></p>
+              <p class="note"><span class="zh">協助籌辦第二場工作坊「城市能源綠洲演習」，以高雄為情境城市進行桌上推演（TTX），並編撰參演手冊。</span><span class="en">Helping organize the second workshop, the Urban Energy Oasis tabletop exercise (TTX) set in Kaohsiung, and writing its participant handbook.</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-    <section id="projects">
-      <h2 class="sec"><span class="zh">研究計畫</span><span class="en">Research Projects</span></h2>
-      <p class="sub"><span class="zh">進行中・兼任研究助理</span><span class="en">Ongoing · as research assistant</span></p>
-      <ul class="entries">
-        <li>
-          <div class="when">2026.10 —</div>
-          <div class="what">
-            <h3><span class="zh">制度節點與爭議的生成邏輯：準政府組織制度變遷過程的比較分析－以行政法人與政府捐助之財團法人為例</span><span class="en">Institutional Nodes and the Logic of Controversy Generation: A Comparative Analysis of Institutional Change in Quasi-Governmental Organizations, Focusing on Administrative Corporations and Government-Endowed Foundations</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">國科會</span><span class="en">NSTC</span></span>・<span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2026.10 —</div>
-          <div class="what">
-            <h3><span class="zh">行政法人國家中醫研究院人事及薪資建構委託辦理計畫</span><span class="en">Establishment of Personnel and Compensation Systems for the National Institute of Traditional Chinese Medicine (an administrative corporation)</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">委託研究</span><span class="en">Commissioned</span></span>・<span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2026</div>
-          <div class="what">
-            <h3><span class="zh">115 年度職災勞工傷病診治及重建復工服務精進計畫－職災預防及重建中心轉型為行政法人之可行性評估</span><span class="en">Feasibility Assessment of Transforming the Center for Occupational Accident Prevention and Rehabilitation into an Administrative Corporation (2026 Program for Improving Medical Care, Rehabilitation and Return-to-Work Services for Occupationally Injured Workers)</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">委託研究</span><span class="en">Commissioned</span></span>・<span class="zh">台灣職業衛生學會</span><span class="en">Taiwan Occupational Hygiene Association</span></p>
-            <p class="note"><span class="zh">負責國外組織個案（日本、韓國）章節，並製作焦點團體座談簡報。</span><span class="en">Wrote the chapter on comparator organizations in Japan and Korea and prepared the focus-group presentation.</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2026.02 —</div>
-          <div class="what">
-            <h3><span class="zh">探索次世代定序時代產前和新生兒基因檢測的父母決策和倫理問題</span><span class="en">Exploring Parental Decision-Making and Ethical Issues in Prenatal and Neonatal Genetic Testing in the Next-Generation Sequencing Era</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">合作研究</span><span class="en">Joint study</span></span>・<span class="zh">臺大醫院、國立臺灣大學</span><span class="en">National Taiwan University Hospital &amp; National Taiwan University</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2026.01 —</div>
-          <div class="what">
-            <h3><span class="zh">地緣政治下的能源安全、關鍵能資源風險及區域合作策略之研析</span><span class="en">Energy Security, Key Energy Resource Risks, and Regional Cooperation Strategies under Geopolitics</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">國科會</span><span class="en">NSTC</span></span>・<span class="zh">國立臺灣大學</span><span class="en">National Taiwan University</span></p>
-            <p class="note"><span class="zh">參與籌辦第二場工作坊「城市能源綠洲演習」，以高雄為情境城市進行桌上推演（TTX），並編撰參演手冊。</span><span class="en">Helping organize the second workshop, the Urban Energy Oasis tabletop exercise (TTX) set in Kaohsiung, and writing its participant handbook.</span></p>
-          </div>
-        </li>
-      </ul>
+      <div class="group">
+        <p class="ghead"><span class="zh">已完成</span><span class="en">Completed</span></p>
+        <ul class="entries">
+          <li>
+            <div class="when">2023.12 — 2024.07</div>
+            <div class="what" style="--c:var(--a1)">
+              <h3><span class="zh">臺北市立聯合醫院經營體制轉型方案探討規劃案</span><span class="en">Planning the Transformation of the Management System of Taipei City Hospital</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">規劃研究</span><span class="en">Planning study</span></span><span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2023.09 — 2023.12</div>
+            <div class="what" style="--c:var(--a3)">
+              <h3><span class="zh">112 年度 USR Hub 計畫：都市再生總體計畫——在地參與的社區活化實驗</span><span class="en">Urban Regeneration Master Plan: A Community Revitalization Experiment with Local Participation (USR Hub, 2023)</span></h3>
+              <p class="meta"><span class="tag">USR Hub</span><span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2021.09 — 2023.08</div>
+            <div class="what" style="--c:var(--a0)">
+              <h3><span class="zh">民意與政策研究中心調查研究計畫</span><span class="en">Survey projects, Public Opinion and Policy Research Center</span></h3>
+              <p class="meta"><span class="tag"><span class="zh">調查研究</span><span class="en">Survey research</span></span><span class="zh">臺北市立大學・電話訪員、兼任行政助理及督導</span><span class="en">University of Taipei · Interviewer, then Administrative Assistant and Supervisor</span></p>
+              <ul>
+                <li><span class="zh">勞動部勞動力發展署協助受疫情影響企業及勞工之紓困措施成效分析</span><span class="en">Effectiveness of pandemic relief measures, Workforce Development Agency, Ministry of Labor</span></li>
+                <li><span class="zh">衛生福利部中央健康保險署公共服務滿意度調查</span><span class="en">Public Service Satisfaction Survey, National Health Insurance Administration</span></li>
+                <li><span class="zh">人工智慧決策過程中的知識移轉與人為因素</span><span class="en">Knowledge transfer and human factors in AI decision-making</span></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-      <p class="sub" style="margin-top:28px"><span class="zh">已完成</span><span class="en">Completed</span></p>
-      <ul class="entries">
-        <li>
-          <div class="when">2023.12 — 2024.07</div>
-          <div class="what">
-            <h3><span class="zh">臺北市立聯合醫院經營體制轉型方案探討規劃案</span><span class="en">Planning the Transformation of the Management System of Taipei City Hospital</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">規劃研究</span><span class="en">Planning study</span></span>・<span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2023.09 — 2023.12</div>
-          <div class="what">
-            <h3><span class="zh">112 年度 USR Hub 計畫：都市再生總體計畫——在地參與的社區活化實驗</span><span class="en">Urban Regeneration Master Plan: A Community Revitalization Experiment with Local Participation (USR Hub, 2023)</span></h3>
-            <p class="meta"><span class="funder">USR Hub</span>・<span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2022.09 — 2023.08</div>
-          <div class="what">
-            <h3><span class="zh">民意與政策研究中心調查研究計畫</span><span class="en">Survey projects, Public Opinion and Policy Research Center</span></h3>
-            <p class="meta"><span class="funder"><span class="zh">調查研究</span><span class="en">Survey research</span></span>・<span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p>
-            <ul>
-              <li><span class="zh">勞動部勞動力發展署協助受疫情影響企業及勞工之紓困措施成效分析</span><span class="en">Effectiveness of pandemic relief measures for enterprises and workers, Workforce Development Agency, Ministry of Labor</span></li>
-              <li><span class="zh">衛生福利部中央健康保險署公共服務滿意度調查</span><span class="en">Public Service Satisfaction Survey, National Health Insurance Administration</span></li>
-              <li><span class="zh">人工智慧決策過程中的知識移轉與人為因素</span><span class="en">Knowledge transfer and human factors in AI decision-making</span></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </section>
+  <!-- Education & experience -->
+  <section class="block alt" id="education">
+    <div class="wrap">
+      <div class="head"><span class="no">05</span><h2><span class="zh">學歷與經歷</span><span class="en">Education &amp; Experience</span></h2></div>
+      <div class="two">
+        <div>
+          <p class="ghead"><span class="zh">學歷</span><span class="en">Education</span></p>
+          <ul class="edu">
+            <li class="cur"><span class="when">2025.09 —</span><h3><span class="zh">國立臺灣大學 國家發展研究所 碩士班</span><span class="en">M.A., Graduate Institute of National Development, National Taiwan University</span></h3><p><span class="zh">指導教授：林子倫 教授；共同指導：張國暉 教授</span><span class="en">Advisor: Prof. Tze-Luen Lin · Co-advisor: Prof. Kuo-Hui Chang</span></p></li>
+            <li><span class="when">2024.09 — 2025.06</span><h3><span class="zh">臺北市立大學 社會暨公共事務學系 公共事務碩士班（預研生）</span><span class="en">Pre-graduate Student, MPA Program, University of Taipei</span></h3></li>
+            <li><span class="when">2024.08 — 2025.01</span><h3><span class="zh">國立暨南國際大學 國際政治 交換學生</span><span class="en">Exchange Student, International Politics, National Chi Nan University</span></h3></li>
+            <li><span class="when">2021.09 — 2025.06</span><h3><span class="zh">臺北市立大學 社會暨公共事務學系 學士</span><span class="en">B.A., Social and Public Affairs, University of Taipei</span></h3></li>
+          </ul>
+        </div>
+        <div>
+          <p class="ghead"><span class="zh">研究與實習經歷</span><span class="en">Research &amp; Internships</span></p>
+          <ul class="compact">
+            <li><span class="when">2026.09 —</span><span><span class="zh">臺北市立大學 碩士生兼任研究助理（李天申 副教授）</span><span class="en">Graduate Research Assistant to Assoc. Prof. Tien-Shen Li, University of Taipei</span></span></li>
+            <li><span class="when">2026 —</span><span><span class="zh">台灣職業衛生學會 研究助理</span><span class="en">Research Assistant, Taiwan Occupational Hygiene Association</span></span></li>
+            <li><span class="when">2026.01 —</span><span><span class="zh">國立臺灣大學 碩士生兼任研究助理（林子倫 教授）</span><span class="en">Graduate Research Assistant to Prof. Tze-Luen Lin, National Taiwan University</span></span></li>
+            <li><span class="when">2024.02 — 06</span><span><span class="zh">臺北市政府民政局 公共事務實習：戶政便民服務與服務人員情緒勞務調查</span><span class="en">Intern, Department of Civil Affairs, Taipei City Government: household registration services and front-line emotional labor</span></span></li>
+            <li><span class="when">2023.09 — 2024.07</span><span><span class="zh">臺北市立大學 大學生兼任研究助理</span><span class="en">Undergraduate Research Assistant, University of Taipei</span></span></li>
+            <li><span class="when">2023.07 — 12</span><span><span class="zh">環境法律人協會 公共事務實習：臺北市山坡地開發與都市更新研究</span><span class="en">Intern, Environmental Jurists Association: hillside development and urban renewal in Taipei</span></span></li>
+            <li><span class="when">2021.09 — 2023.08</span><span><span class="zh">臺北市立大學民意與政策研究中心 電話訪員、兼任行政助理及督導</span><span class="en">Interviewer, then Administrative Assistant and Supervisor, Public Opinion and Policy Research Center</span></span></li>
+          </ul>
+          <p class="ghead" style="margin-top:32px"><span class="zh">公共服務</span><span class="en">Service</span></p>
+          <ul class="compact">
+            <li><span class="when">2022 — 2024</span><span><span class="zh">臺北市立大學校務會議、人文藝術學院院務會議學生代表</span><span class="en">Student Representative, University Affairs Meeting and College Meeting, University of Taipei</span></span></li>
+            <li><span class="when">2022 — 2024</span><span><span class="zh">社會暨公共事務學系系學會第 16、17 屆會長；系務會議學生代表</span><span class="en">President (16th–17th terms), Social and Public Affairs Student Association</span></span></li>
+            <li><span class="when">2022 — 2023</span><span><span class="zh">學生申訴評議委員會委員</span><span class="en">Member, Student Appeals Review Committee</span></span></li>
+            <li><span class="when">2022</span><span><span class="zh">學生會第 9 屆文化部部長、第 8 屆選舉及罷免事務委員會主任委員</span><span class="en">Minister of Culture and Chair of the Election and Recall Affairs Committee, Student Association</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="education">
-      <h2 class="sec"><span class="zh">學歷</span><span class="en">Education</span></h2>
-      <ul class="entries">
-        <li>
-          <div class="when">2025.09 —</div>
-          <div class="what">
-            <h3><span class="zh">國立臺灣大學 國家發展研究所 碩士班</span><span class="en">M.A., Graduate Institute of National Development, National Taiwan University</span></h3>
-            <p class="meta"><span class="zh">指導教授：林子倫 教授；共同指導教授：張國暉 教授</span><span class="en">Advisor: Prof. Tze-Luen Lin · Co-advisor: Prof. Kuo-Hui Chang</span></p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2024.09 — 2025.06</div>
-          <div class="what">
-            <h3><span class="zh">臺北市立大學 社會暨公共事務學系 公共事務碩士班（預研生）</span><span class="en">Pre-graduate student, MPA Program, Department of Social and Public Affairs, University of Taipei</span></h3>
-          </div>
-        </li>
-        <li>
-          <div class="when">2024.08 — 2025.01</div>
-          <div class="what">
-            <h3><span class="zh">國立暨南國際大學 國際政治 交換學生</span><span class="en">Exchange Student, International Politics, National Chi Nan University</span></h3>
-          </div>
-        </li>
-        <li>
-          <div class="when">2021.09 — 2025.06</div>
-          <div class="what">
-            <h3><span class="zh">臺北市立大學 社會暨公共事務學系 學士</span><span class="en">B.A., Department of Social and Public Affairs, University of Taipei</span></h3>
-          </div>
-        </li>
-      </ul>
-    </section>
+  <!-- CV -->
+  <section class="block" id="cv">
+    <div class="wrap">
+      <div class="head"><span class="no">06</span><h2>Curriculum Vitae</h2></div>
+      <div class="two">
+        <a class="card cvcard" href="cv/CV_YuChengChen_en.pdf" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+          <h3>English</h3>
+          <b style="font-family:var(--f-latin);font-size:1.3rem;font-weight:600">CV — Yu-Cheng (Kane) Chen</b>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:14px">PDF · 2 pages · <span class="zh">2026 年 11 月更新</span><span class="en">Updated November 2026</span></p>
+        </a>
+        <a class="card cvcard" href="cv/CV_YuChengChen_zh.pdf" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+          <h3>中文</h3>
+          <b style="font-family:var(--f-serif);font-size:1.3rem">履歷 — 陳佑丞</b>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:14px">PDF · 2 頁 · <span class="zh">2026 年 11 月更新</span><span class="en">Updated November 2026</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <section id="experience">
-      <h2 class="sec"><span class="zh">經歷</span><span class="en">Experience</span></h2>
-      <p class="sub"><span class="zh">研究</span><span class="en">Research</span></p>
-      <ul class="entries">
-        <li><div class="when">2026.09 —</div><div class="what"><h3><span class="zh">碩士生兼任研究助理</span><span class="en">Graduate Research Assistant</span></h3><p class="meta"><span class="zh">臺北市立大學・李天申 副教授（公共事務學系專任副教授兼通識教育中心主任）</span><span class="en">University of Taipei · with Assoc. Prof. Tien-Shen Li (Department of Public Affairs; Director, General Education Center)</span></p></div></li>
-        <li><div class="when">2026.01 —</div><div class="what"><h3><span class="zh">碩士生兼任研究助理</span><span class="en">Graduate Research Assistant</span></h3><p class="meta"><span class="zh">國立臺灣大學・林子倫 教授</span><span class="en">National Taiwan University · with Prof. Tze-Luen Lin</span></p></div></li>
-        <li><div class="when">2023.09 — 2024.07</div><div class="what"><h3><span class="zh">大學生兼任研究助理</span><span class="en">Undergraduate Research Assistant</span></h3><p class="meta"><span class="zh">臺北市立大學</span><span class="en">University of Taipei</span></p></div></li>
-        <li><div class="when">2021.09 — 2023.08</div><div class="what"><h3><span class="zh">電話訪員；兼任行政助理及督導</span><span class="en">Telephone Interviewer; Administrative Assistant and Supervisor</span></h3><p class="meta"><span class="zh">臺北市立大學民意與政策研究中心</span><span class="en">Public Opinion and Policy Research Center, University of Taipei</span></p></div></li>
-      </ul>
-      <p class="sub" style="margin-top:28px"><span class="zh">實習</span><span class="en">Internships</span></p>
-      <ul class="entries">
-        <li><div class="when">2024.02 — 2024.06</div><div class="what"><h3><span class="zh">臺北市政府民政局 公共事務實習</span><span class="en">Department of Civil Affairs, Taipei City Government</span></h3><p class="note"><span class="zh">實習研究：臺北市戶政事務所便民服務措施與服務人員情緒勞務之調查分析——以文山區、大同區戶政事務所為對象。</span><span class="en">Study of convenience services at Taipei household registration offices and the emotional labor of front-line staff (Wenshan and Datong District offices).</span></p></div></li>
-        <li><div class="when">2023.07 — 2023.12</div><div class="what"><h3><span class="zh">環境法律人協會 公共事務實習</span><span class="en">Environmental Jurists Association</span></h3><p class="note"><span class="zh">實習研究：臺北市山坡地開發與建築管制區域之演變，以及山坡地住宅開發與都市更新、危老重建。</span><span class="en">Study of hillside development and building-control zones in Taipei, hillside housing, urban renewal and the rebuilding of dangerous old buildings.</span></p></div></li>
-      </ul>
-      <p class="sub" style="margin-top:28px"><span class="zh">其他</span><span class="en">Other</span></p>
-      <ul class="compact">
-        <li><span class="when">2023.10 — 2024.01</span><span><span class="zh">臺北市立大學通識教育中心 兼任行政助理</span><span class="en">Administrative Assistant, General Education Center, University of Taipei</span></span></li>
-        <li><span class="when">2022.07 — 2022.08</span><span><span class="zh">信東生技股份有限公司 品質管理部兼任試藥管理人員</span><span class="en">Assistant Technician, Quality Management, Taiwan Biotech Co., Ltd.</span></span></li>
-      </ul>
-    </section>
-
-    <section id="service">
-      <h2 class="sec"><span class="zh">公共服務</span><span class="en">Service</span></h2>
-      <ul class="compact">
-        <li><span class="when">2022.08 — 2024.07</span><span><span class="zh">臺北市立大學 校務會議、人文藝術學院院務會議 學生代表</span><span class="en">Student Representative, University Affairs Meeting and College of Humanities and Arts Meeting, University of Taipei</span></span></li>
-        <li><span class="when">2022.06 — 2024.06</span><span><span class="zh">社會暨公共事務學系系學會 第 16、17 屆會長；系務會議學生代表</span><span class="en">President (16th–17th terms), Social and Public Affairs Student Association; Student Representative, Department Meeting</span></span></li>
-        <li><span class="when">2022.08 — 2023.07</span><span><span class="zh">臺北市立大學 學生申訴評議委員會委員</span><span class="en">Member, Student Appeals Review Committee, University of Taipei</span></span></li>
-        <li><span class="when">2022.06 — 2022.12</span><span><span class="zh">臺北市立大學學生會 第 9 屆文化部部長</span><span class="en">Minister of Culture (9th term), University of Taipei Student Association</span></span></li>
-        <li><span class="when">2022.04 — 2022.05</span><span><span class="zh">臺北市立大學學生會 第 8 屆選舉及罷免事務委員會主任委員</span><span class="en">Chair (8th term), Election and Recall Affairs Committee, University of Taipei Student Association</span></span></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <span>© 2026 陳佑丞 Yu-Cheng (Kane) Chen</span>
-    <span><span class="zh">最後更新：2026 年 11 月</span><span class="en">Last updated: November 2026</span></span>
-  </footer>
-</div>
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="big">陳佑丞</p>
+      <div>Yu-Cheng (Kane) Chen · <span class="zh">國立臺灣大學國家發展研究所</span><span class="en">Graduate Institute of National Development, NTU</span></div>
+      <small>© 2026 · <span class="zh">最後更新：2026 年 11 月</span><span class="en">Last updated November 2026</span></small>
+    </div>
+    <div class="links">
+      <a href="mailto:r14341044@ntu.edu.tw">r14341044@ntu.edu.tw</a>
+      <a href="https://www.linkedin.com/in/%E4%BD%91%E4%B8%9E-%E9%99%B3-949731250" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kane-yc-chen" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
 
 <script>
+/* language */
 (function(){
-  var body=document.body, zh=document.getElementById('btn-zh'), en=document.getElementById('btn-en');
-  function set(lang){
-    var isEn=lang==='en';
-    body.classList.toggle('en',isEn);
-    document.documentElement.lang=isEn?'en':'zh-Hant';
-    zh.setAttribute('aria-pressed',String(!isEn));
-    en.setAttribute('aria-pressed',String(isEn));
-    try{localStorage.setItem('ycc-lang',lang);}catch(e){}
+  var body=document.body,zh=document.getElementById('btn-zh'),en=document.getElementById('btn-en');
+  function set(l){var e=l==='en';body.classList.toggle('en',e);document.documentElement.lang=e?'en':'zh-Hant';
+    zh.setAttribute('aria-pressed',String(!e));en.setAttribute('aria-pressed',String(e));try{localStorage.setItem('ycc-lang',l)}catch(x){}}
+  zh.onclick=function(){set('zh')};en.onclick=function(){set('en')};
+  var s=null;try{s=localStorage.getItem('ycc-lang')}catch(x){}
+  if(location.hash==='#en')s='en';if(s==='en')set('en');
+})();
+
+/* timeline */
+(function(){
+  var T0=2021.5, T1=2027.5, NOW=2026+10.5/12;
+  function ym(s){var p=s.split('.');return +p[0]+((p[1]?+p[1]:1)-1)/12}
+  var rows=[
+    {c:'a0',zh:'民意與政策研究中心（調查研究）',en:'Public opinion research center (surveys)',s:'2021.09',e:'2023.09'},
+    {c:'a3',zh:'USR Hub 都市再生計畫',en:'USR Hub urban regeneration',s:'2023.09',e:'2024.01'},
+    {c:'a1',zh:'臺北市立聯合醫院經營體制轉型',en:'Taipei City Hospital transformation',s:'2023.12',e:'2024.08'},
+    {c:'a2',zh:'國科會：能源安全與區域合作',en:'NSTC: energy security',s:'2026.01',e:null},
+    {c:'a3',zh:'次世代定序基因檢測倫理',en:'NGS genetic testing ethics',s:'2026.02',e:null},
+    {c:'a1',zh:'職災中心轉型行政法人評估',en:'Occupational accident center assessment',s:'2026.01',e:null},
+    {c:'a1',zh:'國科會：準政府組織制度變遷',en:'NSTC: quasi-governmental organizations',s:'2026.10',e:null},
+    {c:'a1',zh:'國家中醫研究院人事薪資制度',en:'NITCM personnel and pay systems',s:'2026.10',e:null},
+    {c:'a4',zh:'TASPAA 2027 論文（撰寫中）',en:'TASPAA 2027 paper (in progress)',s:'2026.09',e:'2027.06',plan:true}
+  ];
+  function pct(t){return ((t-T0)/(T1-T0)*100).toFixed(2)+'%'}
+  var tl=document.getElementById('tl'),h='';
+  h+='<div class="tl-axis"><span></span><div class="scale">';
+  for(var y=2022;y<=2027;y++)h+='<span style="left:'+pct(y)+'">'+y+'</span>';
+  h+='</div></div><div class="tl-rows"><div class="tl-grid">';
+  for(y=2022;y<=2027;y++)h+='<i style="left:'+pct(y)+'"></i>';
+  h+='<i class="now" style="left:'+pct(NOW)+'"></i></div>';
+  rows.forEach(function(r){
+    var s=ym(r.s),e=r.e?ym(r.e):NOW;
+    h+='<div class="tl-row"><span class="lb"><span class="dot" style="background:var(--'+r.c+')"></span><span><span class="zh">'+r.zh+'</span><span class="en">'+r.en+'</span></span></span>'+
+       '<div class="tl-track"><span class="tl-bar'+(r.plan?' plan':'')+(r.e?'':' open')+'" style="--c:var(--'+r.c+');left:'+pct(s)+';width:calc('+pct(e)+' - '+pct(s)+')"></span></div></div>';
+  });
+  h+='</div>';
+  tl.innerHTML=h;
+  var g=tl.querySelector('.tl-grid'),lab=document.createElement('b');
+  lab.innerHTML='<span class="zh">現在</span><span class="en">NOW</span>';lab.style.left=pct(NOW);g.appendChild(lab);
+})();
+
+/* hero network: institutional nodes */
+(function(){
+  var cv=document.getElementById('net');if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d'),W,H,dpr,nodes=[],raf;
+  var cols=['82,182,178','227,162,75','115,192,124','179,145,226','150,170,200'];
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=cv.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+  function seed(){
+    nodes=[];var n=Math.round(Math.min(70,Math.max(28,W*H/14000)));
+    for(var i=0;i<n;i++){
+      var hub=i<8;
+      nodes.push({x:W*(.35+Math.random()*.65),y:Math.random()*H,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,
+        r:hub?3.6+Math.random()*2:1.4+Math.random()*1.6,c:cols[hub?i%4:(Math.random()<.35?4:Math.floor(Math.random()*4))],hub:hub});
+    }
   }
-  zh.addEventListener('click',function(){set('zh');});
-  en.addEventListener('click',function(){set('en');});
-  var saved=null;
-  try{saved=localStorage.getItem('ycc-lang');}catch(e){}
-  if(location.hash==='#en')saved='en';
-  if(saved==='en')set('en');
+  function draw(){
+    ctx.clearRect(0,0,W,H);var D=W<700?110:150;
+    for(var i=0;i<nodes.length;i++){var a=nodes[i];
+      for(var j=i+1;j<nodes.length;j++){var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<D){ctx.strokeStyle='rgba(255,255,255,'+(0.16*(1-d/D)).toFixed(3)+')';ctx.lineWidth=(a.hub||b.hub)?1:.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}
+    nodes.forEach(function(n){
+      if(n.hub){ctx.fillStyle='rgba('+n.c+',.16)';ctx.beginPath();ctx.arc(n.x,n.y,n.r*3.2,0,6.283);ctx.fill();}
+      ctx.fillStyle='rgba('+n.c+','+(n.hub?.95:.7)+')';ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,6.283);ctx.fill();
+    });
+  }
+  function step(){
+    nodes.forEach(function(n){n.x+=n.vx;n.y+=n.vy;
+      if(n.x<W*.3||n.x>W+20)n.vx*=-1;if(n.y<-20||n.y>H+20)n.vy*=-1;});
+    draw();raf=requestAnimationFrame(step);
+  }
+  function start(){cancelAnimationFrame(raf);size();seed();if(still)draw();else step();}
+  start();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(start,150)});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)cancelAnimationFrame(raf);else if(!still)step();});
 })();
 </script>
 </body>
