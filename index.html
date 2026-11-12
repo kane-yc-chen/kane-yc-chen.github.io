@@ -77,6 +77,10 @@ body.en .zh{display:none!important}
 body:not(.en) .en{display:none!important}
 .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
 
+/* ---------- course notice ---------- */
+.notice{background:color-mix(in srgb,var(--a2) 14%,var(--bg));border-bottom:1px solid var(--rule);color:var(--ink);font-size:13px;line-height:1.6}
+.notice .wrap{padding-top:8px;padding-bottom:8px;display:flex;gap:10px;align-items:baseline}
+.notice b{font-weight:700;color:var(--a2);white-space:nowrap}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--navy) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:56px}
@@ -258,6 +262,13 @@ footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:
 </style>
 </head>
 <body>
+
+<div class="notice" role="note">
+  <div class="wrap">
+    <b><span class="zh">使用說明</span><span class="en">Notice</span></b>
+    <span><span class="zh">本網站目前僅供國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」（Comparative Legislative Politics in East Asia）課程參考使用。</span><span class="en">This website is currently provided for reference only in the course Comparative Legislative Politics in East Asia (Fall 2026), Graduate Institute of National Development, National Taiwan University.</span></span>
+  </div>
+</div>
 
 <header class="nav">
   <div class="wrap">
@@ -554,7 +565,7 @@ footer small{display:block;margin-top:18px;color:rgba(255,255,255,.5);font-size:
     <div>
       <p class="big">陳佑丞</p>
       <div>Yu-Cheng (Kane) Chen · <span class="zh">國立臺灣大學國家發展研究所</span><span class="en">Graduate Institute of National Development, NTU</span></div>
-      <small>© 2026 · <span class="zh">最後更新：2026 年 11 月</span><span class="en">Last updated November 2026</span></small>
+      <small>© 2026 · <span class="zh">最後更新：2026 年 11 月・目前僅供臺大國發所 115-1「東亞比較立法政治專題」課程參考使用</span><span class="en">Last updated November 2026 · Currently for reference only in Comparative Legislative Politics in East Asia (Fall 2026), NTU</span></small>
     </div>
     <div class="links">
       <a href="mailto:r14341044@ntu.edu.tw">r14341044@ntu.edu.tw</a>
