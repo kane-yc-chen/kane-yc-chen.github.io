@@ -48,7 +48,7 @@ def build(d, lang):
     if lang=='zh':
         css += 'body{font-family:"Noto Serif CJK TC",serif}' + 'body{font-size:9.9pt;line-height:1.42} .entry{margin-bottom:5pt} h2{margin:9pt 0 4pt} .intro p{margin-bottom:4pt} li{margin-bottom:1pt} h3{margin:6pt 0 3pt}'
     if lang=='en':
-        css += '.intro p, li{text-align:left} ' + 'body{font-size:10pt;line-height:1.32} .entry{margin-bottom:5.5pt} h2{margin:9pt 0 4pt} .intro p{margin-bottom:4.5pt} li{margin-bottom:1pt}'
+        css += '.intro p, li{text-align:left} ' + 'body{font-size:9.7pt;line-height:1.3} .entry{margin-bottom:5.5pt} h2{margin:9pt 0 4pt} .intro p{margin-bottom:4.5pt} li{margin-bottom:1pt}'
     o = [f'<!DOCTYPE html><html lang="{ "zh-Hant" if lang=="zh" else "en"}"><head><meta charset="utf-8"><style>{css}</style></head><body>']
     o.append(f'<header><h1>{d["name"]}</h1><p>{d["affil"]}</p>'
              f'<p><a href="mailto:r14341044@ntu.edu.tw">{MAIL}r14341044@ntu.edu.tw</a><span class="sep">⋄</span>'
@@ -105,20 +105,20 @@ EN = dict(name='Yu-Cheng (Kane) Chen',
   dict(org='University of Taipei', right='Sep 2021 – Jun 2025', sub='Bachelor of Arts in Social and Public Affairs; GPA by semester: 4.00–4.18 (out of 4.30)'),
  ]),
   dict(h='Research Experience', kind='entries', items=[
-  dict(org='National Taiwan University', right='Taipei, Taiwan', roles=[dict(t='Graduate Research Assistant to Prof. Tze-Luen Lin', d='Jan 2026 – Present', b=[
+  dict(org='National Taiwan University', right='Taipei, Taiwan', roles=[dict(t='Graduate Research Assistant to Prof. Tze-Luen Lin (Dept. of Political Science)', d='Jan 2026 – Present', b=[
    'NSTC project, <i>Energy Security, Key Energy Resource Risks, and Regional Cooperation Strategies under Geopolitics</i>.',
    'Joint study by National Taiwan University Hospital and National Taiwan University, <i>Exploring Parental Decision-Making and Ethical Issues in Prenatal and Neonatal Genetic Testing in the Next-Generation Sequencing Era</i> (from Feb 2026).'])]),
-  dict(org='University of Taipei', right='Taipei, Taiwan', roles=[dict(t='Graduate Research Assistant to Assoc. Prof. Tien-Shen Li', d='Sep 2026 – Present', b=[
+  dict(org='University of Taipei', right='Taipei, Taiwan', roles=[dict(t='Graduate Research Assistant to Assoc. Prof. Tien-Shen Li (Dept. of Public Affairs)', d='Sep 2026 – Present', b=[
    'NSTC project, <i>Institutional Nodes and the Logic of Controversy Generation: A Comparative Analysis of Institutional Change in Quasi-Governmental Organizations, Focusing on Administrative Corporations and Government-Endowed Foundations</i> (from Oct 2026).',
    'Commissioned project, <i>Establishment of Personnel and Compensation Systems for the National Institute of Traditional Chinese Medicine</i>, an administrative corporation (from Oct 2026).'])]),
-  dict(org='Taiwan Occupational Hygiene Association', right='Taipei, Taiwan', roles=[dict(t='Research Assistant to Adjunct Asst. Prof. Hui-Chen Tseng', d='Jan 2026 – Present', b=[
+  dict(org='Taiwan Occupational Hygiene Association', right='Taipei, Taiwan', roles=[dict(t='Research Assistant to Adjunct Asst. Prof. Hui-Chen Tseng (Dept. of Business Administration, Chung Yuan Christian University)', d='Jan 2026 – Present', b=[
    'Commissioned study under the 2026 Program for Improving Medical Care, Rehabilitation and Return-to-Work Services for Occupationally Injured Workers, assessing whether the Center for Occupational Accident Prevention and Rehabilitation should become an administrative corporation.'])]),
   dict(org='University of Taipei', right='Taipei, Taiwan', roles=[
-   dict(t='Undergraduate Research Assistant to Assoc. Prof. Tien-Shen Li', d='Sep 2023 – Jul 2024', b=[
+   dict(t='Undergraduate Research Assistant to Assoc. Prof. Tien-Shen Li (Dept. of Public Affairs)', d='Sep 2023 – Jul 2024', b=[
     '<i>Planning the Transformation of Taipei City Hospital’s Management System</i> (planning study).',
     'USR Hub project, <i>Urban Regeneration Master Plan: A Community Revitalization Experiment with Local Participation</i> (Sep – Dec 2023).']),
    dict(t='Telephone Interviewer, then Administrative Assistant and Supervisor, Public Opinion and Policy Research Center', d='Sep 2021 – Aug 2023', b=[
-    'Survey projects under the center’s director, Assoc. Prof. Tzu-Ping Liu, including an evaluation of pandemic relief measures for enterprises and workers by the Workforce Development Agency, Ministry of Labor; a public service satisfaction survey for the National Health Insurance Administration, Ministry of Health and Welfare; and a study of knowledge transfer and human factors in AI decision-making.']),
+    'Survey projects under the center’s director, Assoc. Prof. Tzu-Ping Liu (Dept. of Public Affairs), including an evaluation of pandemic relief measures for enterprises and workers by the Workforce Development Agency, Ministry of Labor; a public service satisfaction survey for the National Health Insurance Administration, Ministry of Health and Welfare; and a study of knowledge transfer and human factors in AI decision-making.']),
    ]),
  ]),
  dict(h='Internships', kind='entries', items=[
@@ -160,19 +160,19 @@ ZH = dict(name='陳佑丞',
   dict(org='臺北市立大學　社會暨公共事務學系　學士', right='2021.09 – 2025.06', sub='學期 GPA 4.00–4.18／4.3'),
  ]),
   dict(h='研究經歷', kind='entries', items=[
-  dict(org='國立臺灣大學', right='臺北', roles=[dict(t='碩士生兼任研究助理（林子倫 教授）', d='2026.01 – 迄今', b=[
+  dict(org='國立臺灣大學', right='臺北', roles=[dict(t='碩士生兼任研究助理｜林子倫 教授（臺灣大學政治學系）', d='2026.01 – 迄今', b=[
    '國科會計畫「地緣政治下的能源安全、關鍵能資源風險及區域合作策略之研析」。',
    '臺大醫院與臺灣大學合作計畫「探索次世代定序時代產前和新生兒基因檢測的父母決策和倫理問題」（2026.02 起）。'])]),
-  dict(org='臺北市立大學', right='臺北', roles=[dict(t='碩士生兼任研究助理（李天申 副教授）', d='2026.09 – 迄今', b=[
+  dict(org='臺北市立大學', right='臺北', roles=[dict(t='碩士生兼任研究助理｜李天申 副教授（臺北市立大學公共事務學系）', d='2026.09 – 迄今', b=[
    '國科會計畫「制度節點與爭議的生成邏輯：準政府組織制度變遷過程的比較分析－以行政法人與政府捐助之財團法人為例」（2026.10 起）。',
    '「行政法人國家中醫研究院人事及薪資建構委託辦理計畫」（2026.10 起）。'])]),
-  dict(org='台灣職業衛生學會', right='臺北', roles=[dict(t='研究助理（曾慧珍 兼任助理教授，中原大學企業管理學系）', d='2026.01 – 迄今', b=[
+  dict(org='台灣職業衛生學會', right='臺北', roles=[dict(t='研究助理｜曾慧珍 兼任助理教授（中原大學企業管理學系）', d='2026.01 – 迄今', b=[
    '「115 年度職災勞工傷病診治及重建復工服務精進計畫－職災預防及重建中心轉型為行政法人之可行性評估」。'])]),
   dict(org='臺北市立大學', right='臺北', roles=[
-   dict(t='大學生兼任研究助理（李天申 副教授）', d='2023.09 – 2024.07', b=[
+   dict(t='大學生兼任研究助理｜李天申 副教授（臺北市立大學公共事務學系）', d='2023.09 – 2024.07', b=[
     '「臺北市立聯合醫院經營體制轉型方案探討規劃案」（2023.12 – 2024.07）。',
     '112 年度 USR Hub 計畫「都市再生總體計畫：在地參與的社區活化實驗」（2023.09 – 2023.12）。']),
-   dict(t='民意與政策研究中心　兼任行政助理及督導（中心主任：劉自平 副教授）', d='2022.09 – 2023.08', b=[
+   dict(t='民意與政策研究中心　兼任行政助理及督導｜中心主任 劉自平 副教授（臺北市立大學公共事務學系）', d='2022.09 – 2023.08', b=[
     '參與勞動部勞動力發展署協助受疫情影響企業及勞工之紓困措施成效分析、衛生福利部中央健康保險署公共服務滿意度調查，以及人工智慧決策過程中的知識移轉與人為因素研究。']),
    dict(t='民意與政策研究中心　電話訪員', d='2021.09 – 2022.08')]),
  ]),
@@ -205,8 +205,8 @@ ZH = dict(name='陳佑丞',
 
 HEAD_EN = '<div style="width:100%;text-align:right;padding-right:17mm;font-family:\'Latin Modern Roman\';font-size:7.5pt;color:#555;font-style:italic;">For reference only &middot; Comparative Legislative Politics in East Asia (Fall 2026), Graduate Institute of National Development, National Taiwan University</div>'
 HEAD_ZH = '<div style="width:100%;text-align:right;padding-right:17mm;font-family:\'Noto Serif CJK TC\';font-size:7.5pt;color:#555;">僅供參考｜國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」課程使用</div>'
-FOOT_EN = '<div style="width:100%;text-align:center;font-family:\'Latin Modern Roman\';font-size:7.5pt;color:#555;line-height:1.35;">For reference only in the course <i>Comparative Legislative Politics in East Asia</i> (Fall 2026), Graduate Institute of National Development, National Taiwan University.<br><span style="font-size:9pt;color:#000">Last updated: November 12, 2026 &middot; Page <span class="pageNumber"></span>/<span class="totalPages"></span></span></div>'
-FOOT_ZH = '<div style="width:100%;text-align:center;font-family:\'Noto Serif CJK TC\';font-size:7.5pt;color:#555;line-height:1.4;">本履歷目前僅供國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」（Comparative Legislative Politics in East Asia）課程參考使用。<br><span style="font-size:9pt;color:#000">最後更新：2026年11月12日・第 <span class="pageNumber"></span> 頁，共 <span class="totalPages"></span> 頁</span></div>'
+FOOT_EN = '<div style="width:100%;text-align:center;font-family:\'Latin Modern Roman\';font-size:7.5pt;color:#555;line-height:1.35;">For reference only in the course <i>Comparative Legislative Politics in East Asia</i> (Fall 2026), Graduate Institute of National Development, National Taiwan University.<br><span style="font-size:9pt;color:#000">Last updated: November 13, 2026 &middot; Page <span class="pageNumber"></span>/<span class="totalPages"></span></span></div>'
+FOOT_ZH = '<div style="width:100%;text-align:center;font-family:\'Noto Serif CJK TC\';font-size:7.5pt;color:#555;line-height:1.4;">本履歷目前僅供國立臺灣大學國家發展研究所 115-1「東亞比較立法政治專題」（Comparative Legislative Politics in East Asia）課程參考使用。<br><span style="font-size:9pt;color:#000">最後更新：2026年11月13日・第 <span class="pageNumber"></span> 頁，共 <span class="totalPages"></span> 頁</span></div>'
 
 out = sys.argv[1]
 with sync_playwright() as p:
